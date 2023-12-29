@@ -37,7 +37,7 @@
     "redux-saga": "^1.2.3"
   },
   "devDependencies": {
-    "@laserware/eslint-config": "^1.1.0",
+    "@laserware/eslint-config": "^1.2.0",
     "@rushstack/eslint-patch": "^1.6.1",
     "eslint": "^8.56.0",
     "prettier": "^3.1.1",
