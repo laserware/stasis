@@ -1,16 +1,15 @@
-import type { TypeConstant } from "./types";
-
-export interface ActionCreatorTypeMetadata<TType extends TypeConstant> {
+export interface ActionCreatorTypeMetadata<TType extends string> {
   getType?: () => TType;
+  type: TType;
 }
 
-export type ActionCreator<T extends { type: TypeConstant }> = ((
+export type ActionCreator<T extends { type: string }> = ((
   ...args: any[]
 ) => T) &
   ActionCreatorTypeMetadata<T["type"]>;
 
 export type ActionType<TActionCreatorOrMap> =
-  TActionCreatorOrMap extends ActionCreator<{ type: TypeConstant }>
+  TActionCreatorOrMap extends ActionCreator<{ type: string }>
     ? ReturnType<TActionCreatorOrMap>
     : TActionCreatorOrMap extends Record<any, any>
       ? {
@@ -28,16 +27,21 @@ export type ActionType<TActionCreatorOrMap> =
  * @param action Action to check.
  */
 export function isActionOf<
-  TActionCreator extends ActionCreator<{ type: TypeConstant }>,
+  TActionCreator extends ActionCreator<{ type: string }>,
 >(
   actionCreatorOrCreators: TActionCreator | TActionCreator[],
-  action: { type: TypeConstant },
+  action: { type: string },
 ): action is ReturnType<TActionCreator> {
   const actionCreators = Array.isArray(actionCreatorOrCreators)
     ? actionCreatorOrCreators
     : [actionCreatorOrCreators];
 
-  return actionCreators.some(
-    (actionCreator) => action.type === actionCreator.toString(),
-  );
+  // Exit as soon as the action is found:
+  for (const actionCreator of actionCreators) {
+    if (action.type === actionCreator.toString()) {
+      return true;
+    }
+  }
+
+  return false;
 }

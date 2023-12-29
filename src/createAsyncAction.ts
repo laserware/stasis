@@ -1,12 +1,10 @@
 import { createAction, type PayloadActionCreator } from "@reduxjs/toolkit";
 
-import type { TypeConstant } from "./types";
-
 export interface AsyncActionCreator<
   TRequestPayload,
   TSuccessPayload,
   TFailurePayload,
-  TType extends TypeConstant = TypeConstant,
+  TType extends string = string,
 > {
   request: PayloadActionCreator<TRequestPayload, `${TType}Request`>;
   success: PayloadActionCreator<TSuccessPayload, `${TType}Success`>;
@@ -30,7 +28,7 @@ export function createAsyncAction<
   TRequestPayload,
   TSuccessPayload,
   TFailurePayload,
-  TType extends TypeConstant = TypeConstant,
+  TType extends string = string,
 >(
   type: TType,
 ): AsyncActionCreator<
