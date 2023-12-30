@@ -4,6 +4,7 @@
   "description": "State management using Redux libraries.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "repository": {
     "url": "https://github.com/laserware/stasis.git",
     "type": "git"

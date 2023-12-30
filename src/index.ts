@@ -34,8 +34,8 @@ export * from "redux-saga/effects";
 export {
   createAsyncAction,
   type AsyncActionCreator,
-} from "./createAsyncAction";
+} from "./createAsyncAction.js";
 
-export { forwardChannelAction } from "./forwardChannelAction";
+export { forwardChannelAction } from "./forwardChannelAction.js";
 
-export { isActionOf, type ActionType } from "./isActionOf";
+export { isActionOf, type ActionType } from "./isActionOf.js";
