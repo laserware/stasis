@@ -18,11 +18,11 @@ export interface AsyncActionCreator<
  * 2. Success if the async action succeeded
  * 3. Failure if the async action failed
  *
- * You only need to provide the base type name (i.e. @app/somethingAsync) and
+ * You only need to provide the base type name (i.e. app/somethingAsync) and
  * the following action types will be created:
- * - @app/somethingAsyncRequest
- * - @app/somethingAsyncSuccess
- * - @app/somethingAsyncFailure
+ * - app/somethingAsyncRequest
+ * - app/somethingAsyncSuccess
+ * - app/somethingAsyncFailure
  */
 export function createAsyncAction<
   TRequestPayload,
