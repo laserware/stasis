@@ -14,8 +14,8 @@ dependencies:
 
 devDependencies:
   '@laserware/eslint-config':
-    specifier: ^1.2.0
-    version: 1.2.0(@rushstack/eslint-patch@1.7.2)(eslint@8.56.0)(typescript@5.3.3)
+    specifier: ^1.2.1
+    version: 1.2.1(@rushstack/eslint-patch@1.7.2)(eslint@8.56.0)(typescript@5.3.3)
   '@rushstack/eslint-patch':
     specifier: ^1.7.2
     version: 1.7.2
@@ -343,8 +343,8 @@ packages:
     resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
     dev: true
 
-  /@laserware/eslint-config@1.2.0(@rushstack/eslint-patch@1.7.2)(eslint@8.56.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-Bxcgcp3YUcmoF0bev3U+B1HOBLOFI6FPymtITayrf6550Hg2DwFlq7ByziKlh3Uz6J+7SyhNWgTae8JHC3MUYw==}
+  /@laserware/eslint-config@1.2.1(@rushstack/eslint-patch@1.7.2)(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-PIHGyCzD15P/EV0Qi5zhv0NcUAlXBqUSdSNhUsqKFTIiGo0cIfAx4I1dAYQn6H8Eu31i3L8CeQzyxrd6tjNpxA==}
     peerDependencies:
       '@rushstack/eslint-patch': ^1
       eslint: ^8
