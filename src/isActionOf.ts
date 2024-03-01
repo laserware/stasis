@@ -25,6 +25,7 @@ export type ActionType<TActionCreatorOrMap> =
  * action creator.
  * @param actionCreatorOrCreators Action creator(s) to check against.
  * @param action Action to check.
+ * @deprecated Use [actionCreator.match](https://redux-toolkit.js.org/api/createAction#actioncreatormatch) instead.
  */
 export function isActionOf<
   TActionCreator extends ActionCreator<{ type: string }>,
