@@ -18,6 +18,8 @@ export default defineConfig(() => {
       ...commonOptions,
       dts: true,
       format: "esm",
+      target: "esnext",
+      treeshake: true,
       outExtension: () => ({ js: ".mjs" }),
     },
     {

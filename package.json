@@ -13,7 +13,10 @@
     }
   },
   "type": "module",
-  "repository": "github:laserware/stasis.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laserware/stasis.git"
+  },
   "bugs": "https://github.com/laserware/stasis/issues",
   "author": "Mike Rourke <mike.w.rourke@gmail.com>",
   "license": "MIT",
@@ -27,7 +30,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup && cd dist && npx prettier --write index.d.ts",
+    "build": "tsup && cd dist && npx prettier --write .",
     "prepublishOnly": "npm run build",
     "preversion": "npm run eslint && npm run typecheck",
     "version": "npm run prettier && git add -A src",
@@ -47,8 +50,9 @@
     "@rushstack/eslint-patch": "^1.7.2",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
+    "tslib": "^2.6.2",
     "tsup": "^8.0.2",
-    "typescript": "^5.3.3",
+    "typescript": "^5.4.2",
     "vitest": "^1.3.1"
   },
   "prettier": {
