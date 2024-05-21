@@ -1,7 +1,10 @@
-require("@rushstack/eslint-patch/modern-module-resolution");
+"use strict";
 
 module.exports = {
   extends: ["@laserware/eslint-config"],
-  parserOptions: { tsconfigRootDir: __dirname },
+  parserOptions: {
+    tsconfigRootDir: __dirname,
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
+  },
   ignorePatterns: ["*.js"],
 };

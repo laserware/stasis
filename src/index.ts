@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols
+
 export * from "@reduxjs/toolkit";
 
 export {
@@ -102,6 +104,8 @@ export {
   type TakeEffect,
   type TakeEffectDescriptor,
 } from "redux-saga/effects";
+
+export * as effects from "redux-saga/effects";
 
 export {
   createAsyncAction,
