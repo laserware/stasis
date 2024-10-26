@@ -1,6 +1,6 @@
 {
   "name": "@laserware/stasis",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "State management using Redux libraries.",
   "type": "module",
   "main": "dist/index.cjs",
