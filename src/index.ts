@@ -3,16 +3,16 @@
 export * from "@reduxjs/toolkit";
 
 export {
-  default as createSagaMiddleware,
   buffers,
+  CANCEL,
   channel,
+  default as createSagaMiddleware,
   detach,
+  END,
   eventChannel,
   multicastChannel,
   runSaga,
   stdChannel,
-  CANCEL,
-  END,
   type Buffer,
   type Channel,
   type EffectMiddleware,
@@ -112,4 +112,4 @@ export {
   type AsyncActionCreator,
 } from "./createAsyncAction.js";
 export { forwardChannelAction } from "./forwardChannelAction.js";
-export { isActionOf, type ActionType } from "./isActionOf.js";
+export type { ActionType } from "./types.js";
