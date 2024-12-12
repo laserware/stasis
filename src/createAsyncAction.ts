@@ -3,20 +3,15 @@ import { createAction, type PayloadActionCreator } from "@reduxjs/toolkit";
 /**
  * Action creator for an async action.
  *
- * @template RequestPayload Type of the request action payload.
- * @template SuccessPayload Type of the success action payload.
- * @template FailurePayload Type of the failure action payload.
+ * @template RP Type of the request action payload.
+ * @template SP Type of the success action payload.
+ * @template FP Type of the failure action payload.
  * @template Type Value of the `type` field in the action.
  */
-export interface AsyncActionCreator<
-  RequestPayload,
-  SuccessPayload,
-  TFailurePayload,
-  Type extends string = string,
-> {
-  request: PayloadActionCreator<RequestPayload, `${Type}Request`>;
-  success: PayloadActionCreator<SuccessPayload, `${Type}Success`>;
-  failure: PayloadActionCreator<TFailurePayload, `${Type}Failure`>;
+export interface AsyncActionCreator<RP, SP, FP, Type extends string = string> {
+  request: PayloadActionCreator<RP, `${Type}Request`>;
+  success: PayloadActionCreator<SP, `${Type}Success`>;
+  failure: PayloadActionCreator<FP, `${Type}Failure`>;
 }
 
 /**
@@ -32,22 +27,17 @@ export interface AsyncActionCreator<
  * - app/somethingAsyncSuccess
  * - app/somethingAsyncFailure
  *
- * @template RequestPayload Type of the request action payload.
- * @template SuccessPayload Type of the success action payload.
- * @template FailurePayload Type of the failure action payload.
+ * @template RP Type of the request action payload.
+ * @template SP Type of the success action payload.
+ * @template FP Type of the failure action payload.
  * @template Type Value of the `type` field in the action.
  */
-export function createAsyncAction<
-  RequestPayload,
-  SuccessPayload,
-  FailurePayload,
-  Type extends string = string,
->(
+export function createAsyncAction<RP, SP, FP, Type extends string = string>(
   type: Type,
-): AsyncActionCreator<RequestPayload, SuccessPayload, FailurePayload, Type> {
+): AsyncActionCreator<RP, SP, FP, Type> {
   return {
-    request: createAction<RequestPayload, `${Type}Request`>(`${type}Request`),
-    success: createAction<SuccessPayload, `${Type}Success`>(`${type}Success`),
-    failure: createAction<FailurePayload, `${Type}Failure`>(`${type}Failure`),
+    request: createAction<RP, `${Type}Request`>(`${type}Request`),
+    success: createAction<SP, `${Type}Success`>(`${type}Success`),
+    failure: createAction<FP, `${Type}Failure`>(`${type}Failure`),
   };
 }

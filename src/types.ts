@@ -16,16 +16,16 @@ export type ActionCreator<T extends { type: string }> = ((
 /**
  * Returns the return type of the action creator.
  *
- * @template ActionCreatorOrMap Object or action creator to derive return value from.
+ * @template ACM Object or action creator to derive return value from.
  */
-export type ActionType<ActionCreatorOrMap> =
-  ActionCreatorOrMap extends ActionCreator<{ type: string }>
-    ? ReturnType<ActionCreatorOrMap>
-    : ActionCreatorOrMap extends Record<any, any>
+export type ActionType<ACM> =
+  ACM extends ActionCreator<{ type: string }>
+    ? ReturnType<ACM>
+    : ACM extends Record<any, any>
       ? {
-          [K in keyof ActionCreatorOrMap]: ActionType<ActionCreatorOrMap[K]>;
-        }[keyof ActionCreatorOrMap]
+          [K in keyof ACM]: ActionType<ACM[K]>;
+        }[keyof ACM]
       : // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        ActionCreatorOrMap extends infer R
+        ACM extends infer R
         ? never
         : never;
