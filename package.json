@@ -33,14 +33,15 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "tsup && cd dist && npx prettier --write .",
-    "prepublishOnly": "npm run build",
-    "preversion": "npm run eslint && npm run typecheck",
-    "version": "npm run prettier && git add -A src",
+    "build": "tsup",
+    "prepublishOnly": "bun run build",
+    "preversion": "bun run lint && bun run typecheck",
+    "version": "bun run format && git add -A src",
     "postversion": "git push && git push --tags",
-    "eslint": "eslint --cache src  tsup.config.ts",
-    "prettier": "prettier --cache --write src",
-    "prettier:ci": "prettier --check src",
+    "ci": "biome ci src",
+    "format": "biome check --formatter-enabled=true --linter-enabled=false --organize-imports-enabled=true --write src ",
+    "lint": "biome lint src",
+    "test": "bun test",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
@@ -48,14 +49,13 @@
     "redux-saga": "^1.3.0"
   },
   "devDependencies": {
-    "@laserware/eslint-config": "^5.3.0",
-    "eslint": "^9.17.0",
-    "prettier": "^3.4.2",
-    "tslib": "^2.8.1",
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },
-  "prettier": {
-    "trailingComma": "all"
-  }
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "esbuild"
+  ]
 }

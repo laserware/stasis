@@ -6,10 +6,9 @@
     "declarationMap": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
     "lib": ["DOM", "ESNext"],
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "outDir": "./dist",
     "removeComments": false,
     "resolveJsonModule": true,
@@ -17,10 +16,10 @@
     "sourceMap": false,
     "strict": true,
     "strictNullChecks": true,
+    "stripInternal": true,
     "target": "ESNext",
     "verbatimModuleSyntax": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["dist", "node_modules"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"],
+  "exclude": ["dist", "node_modules"]
 }
