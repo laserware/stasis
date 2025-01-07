@@ -3,10 +3,6 @@ import { defineConfig } from "tsup";
 export default defineConfig(() => {
   const commonOptions = {
     clean: true,
-    // This is forwarded to Redux, just in case:
-    define: {
-      "process.env.NODE_ENV": JSON.stringify("production"),
-    },
     entry: ["src/index.ts"],
     minify: false,
     sourcemap: true,
