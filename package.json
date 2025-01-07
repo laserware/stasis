@@ -2,7 +2,7 @@
   "name": "@laserware/stasis",
   "version": "4.1.1",
   "description": "State management using Redux libraries.",
-  "author": "Mike Rourke <mike.w.rourke@gmail.com>",
+  "author": "Mike Rourke <mike.w.rourke@gmail.com> (https://mikerourke.dev/)",
   "license": "MIT",
   "repository": {
     "url": "git+https://github.com/laserware/stasis.git",
@@ -19,15 +19,8 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "redux",
-    "redux-saga",
-    "sagas",
-    "state-management"
-  ],
+  "files": ["dist"],
+  "keywords": ["redux", "redux-saga", "sagas", "state-management"],
   "publishConfig": {
     "access": "public"
   },
@@ -54,8 +47,5 @@
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },
-  "trustedDependencies": [
-    "@biomejs/biome",
-    "esbuild"
-  ]
+  "trustedDependencies": ["@biomejs/biome", "esbuild"]
 }
