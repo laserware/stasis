@@ -1,0 +1,28 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "cleanOutputDir": true,
+  "entryPoints": ["./src/index.ts"],
+  "exclude": ["**/**test.ts"],
+  "excludeInternal": true,
+  "excludeNotDocumented": true,
+  "externalSymbolLinkMappings": {
+    "typescript": {
+      "KeyboardEvent": "https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent",
+      "MouseEvent": "https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent"
+    }
+  },
+  "headings": { "readme": false, "document": false },
+  "hideGenerator": true,
+  "navigation": {
+    "compactFolders": true,
+    "excludeReferences": true,
+    "includeCategories": true,
+    "includeFolders": true,
+    "includeGroups": false
+  },
+  "markdownLinkExternal": true,
+  "navigationLinks": { "GitHub": "https://github.com/laserware/stasis" },
+  "out": "site",
+  "readme": "./README.md",
+  "useFirstParagraphOfCommentAsSummary": true
+}

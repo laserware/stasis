@@ -1,7 +1,7 @@
-import { createAction, type PayloadActionCreator } from "@reduxjs/toolkit";
+import { type PayloadActionCreator, createAction } from "@reduxjs/toolkit";
 
 /**
- * Action creator for an async action.
+ * Object containing action creators for handling asynchronous actions.
  *
  * @template RP Type of the request action payload.
  * @template SP Type of the success action payload.
@@ -31,6 +31,10 @@ export interface AsyncActionCreator<RP, SP, FP, Type extends string = string> {
  * @template SP Type of the success action payload.
  * @template FP Type of the failure action payload.
  * @template Type Value of the `type` field in the action.
+ *
+ * @param type Value to use for the `type` field of the action.
+ *
+ * @returns Object with a `.request`, `.success`, and `.failure` action creator.
  */
 export function createAsyncAction<RP, SP, FP, Type extends string = string>(
   type: Type,
