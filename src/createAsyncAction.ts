@@ -1,4 +1,4 @@
-import { type PayloadActionCreator, createAction } from "@reduxjs/toolkit";
+import { createAction, type PayloadActionCreator } from "@reduxjs/toolkit";
 
 /**
  * Object containing action creators for handling asynchronous actions.
