@@ -1,6 +1,6 @@
 {
   "name": "@laserware/stasis",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "State management using Redux libraries.",
   "author": "Mike Rourke <mike.w.rourke@gmail.com> (https://mikerourke.dev/)",
   "license": "MIT",
