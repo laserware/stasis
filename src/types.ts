@@ -36,6 +36,7 @@ export type ActionType<AC> = AC extends ActionCreator<{ type: string }>
     ? {
         [K in keyof AC]: ActionType<AC[K]>;
       }[keyof AC]
-    : AC extends infer R
+    : // biome-ignore lint/correctness/noUnusedVariables: Needed for inference.
+      AC extends infer R
       ? never
       : never;
